@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.game-wrapper {
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(255, 100, 0, 0.5);
+    letter-spacing: 4px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+.stat .label {
+    display: block;
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.stat .value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+#gameCanvas {
+    border: 4px solid #444;
+    border-radius: 8px;
+    background-color: #000;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    max-width: 100%;
+    height: auto;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.controls p {
+    margin-bottom: 15px;
+    color: #ccc;
+    font-size: 1rem;
+}
+
+button {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    border: none;
+    color: #fff;
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button.hidden {
+    display: none;
+}
+
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #ff6b35;
+    padding: 40px 60px;
+    border-radius: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 100;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255, 107, 53, 0.4);
+}
+
+.message.hidden {
+    display: none;
+}
+
+.message small {
+    display: block;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #ccc;
+    font-weight: normal;
+}
+
+@media (max-width: 850px) {
+    #gameCanvas {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .stats {
+        gap: 15px;
+    }
+
+    .stat {
+        min-width: 80px;
+        padding: 8px 15px;
+    }
+}
